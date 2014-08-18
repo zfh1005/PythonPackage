@@ -28,8 +28,7 @@ class XXTree:
             name = "`---" + names[len(names) - 1]  
             for j in range(1, len(names) - 1):
                 size = 0
-                if(os.path.isfile(name)):
-                    print('q3424234234234234234234234234234234235345346523626')
+                if(os.path.isfile(name)):                    
                     size = os.path.getsize(name)
                 name = "    " + name
                 
