@@ -4,8 +4,8 @@ import re
 import time
 
 TXT_FILE_EXT = ['txt', 'log']
-PARSE_PATH = 'D:\Temp\log'
-LOG_PATH = 'd:\result.xls'
+PARSE_PATH = 'D:\\Temp\\log'
+LOG_PATH = 'd:\\result.txt'
 
 #user os.walk list all txt/log file in forder
 #the param name is the forder name
@@ -17,6 +17,7 @@ def listForderFileList(name):
                 #parse data
                 result = parseData(filename)
                 writeLog(LOG_PATH, result)
+    print('finish!')
     pass
 
 
@@ -38,10 +39,13 @@ def parseData(sourcePath):
             #print(result[0])
             value.append(result[0])
     f.close
-    print(time.time() - start)
+    #print(time.time() - start)
     
     for x in value :
-        returnResult += x + '\t'
+        if '\t' in x:
+            returnResult += x
+        else:
+            returnResult += x + '\t'
     #print(returnResult)
     return returnResult
 
@@ -49,7 +53,7 @@ def parseData(sourcePath):
 #param logPath is write log file path
 #param result is the data need to write
 def writeLog(logPath, result):
-    f = open(logPath, 'a+')
+    f = open(logPath, 'a')
     f.write(str(result) + '\n')
     f.flush
     f.close

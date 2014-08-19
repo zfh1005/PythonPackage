@@ -47,10 +47,14 @@ def timeToCopy(year = 1970, month = 1, day = 1, hour = 1, minutes = 1):
     if(lt.tm_year == year & lt.tm_mon = month & lt.tm_mday = day & lt.tm_hour = hour & lt.tm_min = minutes):
         copytree(S_PATH, L_PATH)    
 
-'''    
+   
 if __name__ == '__main__':
-    copytree(S_PATH, L_PATH)
+    timeToCopy(2014, 8, 1, 8, 0 )
+    #copytree(S_PATH, L_PATH)
+
+
 ''' 
 S_PATH = 'f:\\temp'
 L_PATH = 'D:\\LogBackup'
 copytree(S_PATH, L_PATH)
+''' 
