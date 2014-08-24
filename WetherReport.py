@@ -9,12 +9,11 @@ def getHtml(url):
     return html.decode('utf-8')
 
 
-def getdata():
-    url="http://www.baidu.com"
+def getdata(url):
     data=urllib.request.urlopen(url).read().decode('utf-8')
     print(data)
 
 
 if __name__ == '__main__' :
     html = getHtml('http://www.weather.com.cn/forecast/') 
-    getdata()
+    getdata(html)
