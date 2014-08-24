@@ -6,7 +6,7 @@ def getHtml(url):
     page = urllib.request.urlopen(url)
     html = page.read()
     page.close()
-    return html
+    return html.decode('utf-8')
 
 
 def getdata():
