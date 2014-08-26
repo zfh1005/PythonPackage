@@ -11,9 +11,10 @@ def getHtml(url):
 
 def getdata():
     url="http://www.baidu.com"
-    data=urllib.request.urlopen(url).read()
+    data=urllib.request.urlopen(url).read().decode('utf-8')
     print(data)
 
 
 if __name__ == '__main__' :
     html = getHtml('http://www.weather.com.cn/forecast/') 
+    getdata()
