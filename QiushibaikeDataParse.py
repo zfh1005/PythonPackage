@@ -41,7 +41,9 @@ def showDoc():
         if i == 20:
             number -= 1
             i = 1
- 
-threading.Thread(target=getDoc).start()
-time.sleep(2)
-threading.Thread(target=showDoc).start()
+
+if __name__ == '__main__' :
+    threading.Thread(target=getDoc).start()
+    time.sleep(2)
+    threading.Thread(target=showDoc).start()
+    
