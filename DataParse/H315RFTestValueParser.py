@@ -30,7 +30,7 @@ def parseData(sourcePath):
     f = open(sourcePath, 'r')
     lines = f.readlines()
     for line in lines:
-        if(('PER' in line) and ('_PER' | "PER_" not in line)):
+        if(('PER' in line) and ("PER_" not in line) and ("_PER" not in line)):
             p = line.split(':')[-1].split('%')[0]
             print(p)
             value.append(p)   
