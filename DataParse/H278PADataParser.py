@@ -32,14 +32,14 @@ def parseData(sourcePath):
     for line in lines:
         if(('EVM_AVG_1' in line) | ('POWER_AVG_1' in line)):
             p = line.split(':')[-1].split('dB')[0]
-            print(p)
+            #print(p)
             value.append(p)
         if(('PER' in line) and ('RX_VERIFY_PER' not in line)):
             p = line.split(':')[-1].split('%')[0]
-            print(p)
+            #print(p)
             value.append(p)   
     f.close
-    print(time.time() - start)
+    #print(time.time() - start)
     
     for x in value :
         if '\t' in x:
