@@ -34,15 +34,15 @@ def parseData(sourcePath):
         lines = f.readlines()
         for line in lines:
             if(('PER' in line) and ("PER_" not in line) and ("_PER" not in line)):
-                p = line.split(':')[-1].split('%')[0]
+                p = line.split(':')[-1].split('%')[0].strip()
                 #print(p)
                 value.append(p)   
             if('EVM_AVG_DB' in line):
-                p = line.split(':')[-1].split('dB')[0]
+                p = line.split(':')[-1].split('dB')[0].strip()
                 #print(p)
                 value.append(p)
             if('POWER_AVG_DBM' in line):
-                p = line.split(':')[-1].split('dBm')[0]
+                p = line.split(':')[-1].split('dBm')[0].strip()
                 #print(p)
                 value.append(p)
             if('Power:' in line):
