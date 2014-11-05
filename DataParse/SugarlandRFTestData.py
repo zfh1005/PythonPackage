@@ -37,10 +37,13 @@ def parseData(sourcePath):
                 p = line.split(':')[-1].split('%')[0].strip()
                 #print(p)
                 value.append(p)   
+            #don't need EVM test value
+            '''
             if('EVM_AVG_DB' in line):
                 p = line.split(':')[-1].split('dB')[0].strip()
                 #print(p)
                 value.append(p)
+            '''
             if('POWER_AVG_DBM' in line):
                 p = line.split(':')[-1].split('dBm')[0].strip()
                 #print(p)
