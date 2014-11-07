@@ -40,3 +40,8 @@ def toUppers(L):
 print (toUppers(['Hello', 'world', 101]))
 
 
+'''
+利用 3 层for循环的列表生成式，找出对称的 3 位数。例如，121 就是对称数，因为从右到左倒过来还是 121。
+'''
+print ([x*100 + y*10 + z for x in range(1, 10) for y in range(0, 10) for z in range(0, 10) if x == z])
+
