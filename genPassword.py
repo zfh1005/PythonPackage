@@ -22,6 +22,6 @@ def writeLog(logPath, result):
 if __name__=="__main__":
   start = time.time()
   for i in range(100000):
-    writeLog(LOG_PATH, genPassword(16))
+    writeLog(LOG_PATH, (str(i) + '     ') + (genPassword(16)))
   print(time.time() - start, '\nFinish')  
     
