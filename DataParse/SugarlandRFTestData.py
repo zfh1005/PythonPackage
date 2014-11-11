@@ -7,7 +7,7 @@ import time
 
 TXT_FILE_EXT = ['txt', 'log']
 PARSE_PATH = 'D:\\Temp\\log'
-LOG_PATH = 'd:\\result.txt'
+LOG_PATH = 'd:\\result.xls'
 
 #user os.walk list all txt/log file in forder
 #the param name is the forder name
@@ -26,8 +26,8 @@ def listForderFileList(name):
 #parse test data
 #the param sourcePathath is filePath need parse
 def parseData(sourcePath):
-    returnResult = '\t'
-    value = [sourcePath]
+    returnResult = ''
+    value = [sourcePath.strip(), sourcePath.split('\\')[-1].split('.')[0].strip()]
     start = time.time()
     f = open(sourcePath, 'r')
     try:
@@ -36,9 +36,9 @@ def parseData(sourcePath):
             if(('PER' in line) and ("PER_" not in line) and ("_PER" not in line)):
                 p = line.split(':')[-1].split('%')[0].strip()
                 #print(p)
-                value.append(p)   
-            #don't need EVM test value
-            '''
+                value.append(p) 
+            #don't need EVM test value    
+            '''      
             if('EVM_AVG_DB' in line):
                 p = line.split(':')[-1].split('dB')[0].strip()
                 #print(p)
