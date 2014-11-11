@@ -4,6 +4,7 @@
 import os
 import re
 import time
+import sys
 
 TXT_FILE_EXT = ['txt', 'log']
 PARSE_PATH = 'D:\\Temp\\log'
@@ -74,5 +75,11 @@ def writeLog(logPath, result):
     f.write(str(result) + '\n')
     f.flush
     f.close
-   
-p = listForderFileList(PARSE_PATH) 
+
+if __name__=="__main__":   
+    if len(sys.argv) < 1:
+        listForderFileList(PARSE_PATH) 
+    else:
+        listForderFileList(sys.argv[1])     
+        
+    
