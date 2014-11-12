@@ -100,6 +100,6 @@ if __name__=="__main__":
     if len(sys.argv) < 2:
         listForderFileList(PARSE_PATH) 
     else:
-        listForderFileList(sys.argv[1])     
+        listForderFileList(sys.argv)     
         
     
