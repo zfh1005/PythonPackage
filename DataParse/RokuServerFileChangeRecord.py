@@ -9,7 +9,7 @@ import sys
 
 SETTING_FILE = ['mySetup.ini']
 PARSE_PATH = ['D:\\Temp\\log', 'D:\\log']
-LOG_PATH = 'd:\\ChangeList.txt'
+OUTPUT_FOLDER = 'D:\\RokuFileChangeList\\'
 
 #user os.walk list all txt/log file in forder
 #the param name is the forder name
@@ -22,7 +22,7 @@ def listForderFileList(names):
                     filename = root + '\\' + fn
                     #parse data
                     result = parseData(filename)
-                    writeData(LOG_PATH, result)
+                    writeData(genRecordFileName(), result)
     print('finish!')
     pass
 
@@ -91,10 +91,17 @@ def parseData(sourcePath):
 #param logPath is write log file path
 #param result is the data need to write
 def writeData(logPath, result):
+    
     f = open(logPath, 'a')
     f.write(str(result) + '\n')
     f.flush
     f.close
+
+def genRecordFileName():
+    tempFileName = OUTPUT_FOLDER + 'recardChangeList' + timeTime.strftime('%Y-%m-%d_%H-%M-%S', timeTime.localtime()) + '.txt'
+    if not os.path.exists(tempFileName):
+        os.makedirs(OUTPUT_FOLDER, exist_ok = True)
+    return tempFileName
 
 if __name__=="__main__":   
     if len(sys.argv) < 2:
