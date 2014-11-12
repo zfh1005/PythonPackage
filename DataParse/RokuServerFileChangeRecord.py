@@ -22,7 +22,7 @@ def listForderFileList(names):
                     filename = root + '\\' + fn
                     #parse data
                     result = parseData(filename)
-                    writeLog(LOG_PATH, result)
+                    writeData(LOG_PATH, result)
     print('finish!')
     pass
 
