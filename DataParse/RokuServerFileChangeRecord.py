@@ -98,7 +98,7 @@ def writeData(logPath, result):
     f.close
 
 def genRecordFileName():
-    tempFileName = OUTPUT_FOLDER + 'recardChangeList' + timeTime.strftime('%Y-%m-%d_%H-%M-%S', timeTime.localtime()) + '.txt'
+    tempFileName = OUTPUT_FOLDER + 'recardChangeList' + timeTime.strftime('%Y-%m-%d_%H', timeTime.localtime()) + '.txt'
     if not os.path.exists(tempFileName):
         os.makedirs(OUTPUT_FOLDER, exist_ok = True)
     return tempFileName
