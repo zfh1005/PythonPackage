@@ -33,8 +33,10 @@ def parseData(sourcePath):
      #add record mySetup file open time 
     nowTime = 'NowTime: ' + timeTime.strftime('%Y-%m-%d %H:%M:%S', timeTime.localtime())
     #add record mySetup file modfiy time 
-    ModfiyTime = 'ModfiyTime: ' + timeTime.ctime(os.path.getmtime(sourcePath.strip()))
-    value = [sourcePath.strip(), sourcePath.split('\\')[-1].strip(), nowTime, ModfiyTime]
+    tempTime = timeTime.strftime('%Y-%m-%d %H:%M:%S', timeTime.localtime(os.path.getmtime(sourcePath.strip())))
+    ModfiyTime = 'ModfiyTime: ' + tempTime
+    fileFolder = sourcePath.split('\\')[-2].strip()
+    value = [sourcePath.strip(), fileFolder, nowTime, ModfiyTime]
     start = timeTime.time()
     f = open(sourcePath, 'r')
     try:
