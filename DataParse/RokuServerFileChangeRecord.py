@@ -67,12 +67,10 @@ def parseData(sourcePath):
                     value.append(p)  
                     tempBool = False
             #parser SN prefix and key prefix
-            elif(('SnPrefix' in line) and ('KeyFilePath' in line)):
-                if tempBool == True :
-                    p = line.strip()
-                    #print(p)
-                    value.append(p)
-                    tempBool = False 
+            elif(('SnPrefix' in line) or ('KeyFilePath' in line)):
+                p = line.strip()
+                #print(p)
+                value.append(p)
     except:
         pass
     finally:    
