@@ -4,7 +4,7 @@
 
 import os
 import re
-import time
+import time as timeTime
 import sys
 
 SETTING_FILE = ['mySetup.ini']
@@ -30,8 +30,12 @@ def listForderFileList(names):
 #the param sourcePathath is filePath need parse
 def parseData(sourcePath):
     returnResult = ''
-    value = [sourcePath.strip(), sourcePath.split('\\')[-1].strip()]
-    start = time.time()
+     #add record mySetup file open time 
+    nowTime = 'NowTime: ' + timeTime.strftime('%Y-%m-%d %H:%M:%S', timeTime.localtime())
+    #add record mySetup file modfiy time 
+    ModfiyTime = 'ModfiyTime: ' + timeTime.ctime(os.path.getmtime(sourcePath.strip()))
+    value = [sourcePath.strip(), sourcePath.split('\\')[-1].strip(), nowTime, ModfiyTime]
+    start = timeTime.time()
     f = open(sourcePath, 'r')
     try:
         lines = f.readlines()
@@ -72,7 +76,7 @@ def parseData(sourcePath):
     finally:    
         f.close
         
-    #print(time.time() - start)
+    #print(timeTime.time() - start)
     #print(value)
     for x in value :
         if '\n' in x:
