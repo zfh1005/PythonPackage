@@ -54,7 +54,7 @@ def parseData(sourcePath):
                 #print(p)
                 value.append(p)   
             if('Test :' in line):
-                p = line.strip().split(':')[-1].split(' ')[0].split('------ ')[0].strip()
+                p = line.strip().split(':')[-1].split(' ')[0].split('----- ')[0].strip()
                 #print(p)
                 value.append(p)     
     except:
