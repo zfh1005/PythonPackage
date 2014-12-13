@@ -46,11 +46,16 @@ def parseData(sourcePath):
         f.close       
     
     #print(value)
-    for x in value :    
+    iNum = 0
+    for x in value :
+        iNum += 1        
         if '\t' in x:
             returnResult += x
         else:
             returnResult += x + '\t'
+        if ((iNum - 2) % 8  == 0):
+            if '\n' not in x:
+                returnResult += '\n'    
     return returnResult
 
 #write data to log file
