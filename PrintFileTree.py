@@ -1,6 +1,9 @@
 
 #!/usr/bin/python  
-import os, sys, string  
+import os 
+import sys
+import string
+
 class XXTree:  
     def __init__(self):  
         pass  
