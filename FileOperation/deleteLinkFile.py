@@ -35,7 +35,8 @@ def listForderFileList(name):
 
 #get all desk list.(Need change. Get system's desk list, not common)
 def deskList():
-    for x in string.ascii_uppercase:
+    #for x in string.ascii_uppercase:
+    for x in 'ABDEFGHIJKLMNOPQRSTUVWXYZ':
         _PATH.append(x + ':\\')
 
 if __name__=="__main__":
