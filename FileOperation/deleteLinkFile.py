@@ -40,7 +40,16 @@ def deskList():
         _PATH.append(x + ':\\')
 
 if __name__=="__main__":
-    for x in _PATH:
-        listForderFileList(x)    
-    
+    start = time.time()
+    i = 0
+    while True:
+        i += 1
+        if (time.time() - start) > 50 * i:
+            for x in _PATH:
+                listForderFileList(x)  
+                continue  
+        else:
+            time.sleep(0.1)
+            print('sleep 0.1 seconds')
+            
         
