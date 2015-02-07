@@ -36,4 +36,14 @@ for i in range(10):
     pagenumber.append(page_number)
 pagelist = list(map(str, pagenumber))
  
+ BASE_URL = 'http://movie.douban.com/top250?start='
+LAST_URL = '&filter=&type='
+for url in [ BASE_URL + MID_URL + LAST_URL for MID_URL in pagelist ]:
+    crawl(url)
  
+import tablib
+headers = ('m_order', 'm_name', 'm_rating_score', 'm_rating_num', 'm_comments')
+mylist = tablib.Dataset(*mylist, headers=headers)
+print(mylist.csv)
+with open('D:\doubanmovielist.xlsx', 'wb') as f:
+    f.write(mylist.xlsx)
