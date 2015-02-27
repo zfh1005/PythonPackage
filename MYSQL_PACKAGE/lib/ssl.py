@@ -1,6 +1,59 @@
 # Wrapper module for _ssl, providing some additional facilities
-# implemented in Python.  
+# implemented in Python. 
+ 
+"""\
+This module provides some more Pythonic support for SSL.
 
+Object types:
+
+  SSLSocket -- subtype of socket.socket which does SSL over the socket
+
+Exceptions:
+
+  SSLError -- exception raised for I/O errors
+
+Functions:
+
+  cert_time_to_seconds -- convert time string used for certificate
+                          notBefore and notAfter functions to integer
+                          seconds past the Epoch (the time values
+                          returned from time.time())
+
+  fetch_server_certificate (HOST, PORT) -- fetch the certificate provided
+                          by the server running on HOST at port PORT.  No
+                          validation of the certificate is performed.
+
+Integer constants:
+
+SSL_ERROR_ZERO_RETURN
+SSL_ERROR_WANT_READ
+SSL_ERROR_WANT_WRITE
+SSL_ERROR_WANT_X509_LOOKUP
+SSL_ERROR_SYSCALL
+SSL_ERROR_SSL
+SSL_ERROR_WANT_CONNECT
+
+SSL_ERROR_EOF
+SSL_ERROR_INVALID_ERROR_CODE
+
+The following group define certificate requirements that one side is
+allowing/requiring from the other side:
+
+CERT_NONE - no certificates from the other side are required (or will
+            be looked at if provided)
+CERT_OPTIONAL - certificates are not required, but if provided will be
+                validated, and if validation fails, the connection will
+                also fail
+CERT_REQUIRED - certificates are required, and will be validated, and
+                if validation fails, the connection will also fail
+
+The following constants identify various SSL protocol variants:
+
+PROTOCOL_SSLv2
+PROTOCOL_SSLv3
+PROTOCOL_SSLv23
+PROTOCOL_TLSv1
+"""
 
 import textwrap
 
