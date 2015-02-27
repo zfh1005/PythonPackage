@@ -275,3 +275,120 @@ class SSLSocket(socket):
         # close=True so as to decrement the reference count when done with
         # the file-like object.
         return _fileobject(self, mode, bufsize, close=True)
+
+		
+		
+
+def wrap_socket(sock, keyfile=None, certfile=None,
+                server_side=False, cert_reqs=CERT_NONE,
+                ssl_version=PROTOCOL_SSLv23, ca_certs=None,
+                do_handshake_on_connect=True,
+                suppress_ragged_eofs=True, ciphers=None):
+
+    return SSLSocket(sock, keyfile=keyfile, certfile=certfile,
+                     server_side=server_side, cert_reqs=cert_reqs,
+                     ssl_version=ssl_version, ca_certs=ca_certs,
+                     do_handshake_on_connect=do_handshake_on_connect,
+                     suppress_ragged_eofs=suppress_ragged_eofs,
+                     ciphers=ciphers)
+
+
+# some utility functions
+
+def cert_time_to_seconds(cert_time):
+
+    """Takes a date-time string in standard ASN1_print form
+    ("MON DAY 24HOUR:MINUTE:SEC YEAR TIMEZONE") and return
+    a Python time value in seconds past the epoch."""
+
+    import time
+    return time.mktime(time.strptime(cert_time, "%b %d %H:%M:%S %Y GMT"))
+
+PEM_HEADER = "-----BEGIN CERTIFICATE-----"
+PEM_FOOTER = "-----END CERTIFICATE-----"
+
+def DER_cert_to_PEM_cert(der_cert_bytes):
+
+    """Takes a certificate in binary DER format and returns the
+    PEM version of it as a string."""
+
+    if hasattr(base64, 'standard_b64encode'):
+        # preferred because older API gets line-length wrong
+        f = base64.standard_b64encode(der_cert_bytes)
+        return (PEM_HEADER + '\n' +
+                textwrap.fill(f, 64) + '\n' +
+                PEM_FOOTER + '\n')
+    else:
+        return (PEM_HEADER + '\n' +
+                base64.encodestring(der_cert_bytes) +
+                PEM_FOOTER + '\n')
+
+def PEM_cert_to_DER_cert(pem_cert_string):
+
+    """Takes a certificate in ASCII PEM format and returns the
+    DER-encoded version of it as a byte sequence"""
+
+    if not pem_cert_string.startswith(PEM_HEADER):
+        raise ValueError("Invalid PEM encoding; must start with %s"
+                         % PEM_HEADER)
+    if not pem_cert_string.strip().endswith(PEM_FOOTER):
+        raise ValueError("Invalid PEM encoding; must end with %s"
+                         % PEM_FOOTER)
+    d = pem_cert_string.strip()[len(PEM_HEADER):-len(PEM_FOOTER)]
+    return base64.decodestring(d)
+
+def get_server_certificate(addr, ssl_version=PROTOCOL_SSLv3, ca_certs=None):
+
+    """Retrieve the certificate from the server at the specified address,
+    and return it as a PEM-encoded string.
+    If 'ca_certs' is specified, validate the server cert against it.
+    If 'ssl_version' is specified, use it in the connection attempt."""
+
+    host, port = addr
+    if (ca_certs is not None):
+        cert_reqs = CERT_REQUIRED
+    else:
+        cert_reqs = CERT_NONE
+    s = wrap_socket(socket(), ssl_version=ssl_version,
+                    cert_reqs=cert_reqs, ca_certs=ca_certs)
+    s.connect(addr)
+    dercert = s.getpeercert(True)
+    s.close()
+    return DER_cert_to_PEM_cert(dercert)
+
+def get_protocol_name(protocol_code):
+    if protocol_code == PROTOCOL_TLSv1:
+        return "TLSv1"
+    elif protocol_code == PROTOCOL_SSLv23:
+        return "SSLv23"
+    elif protocol_code == PROTOCOL_SSLv2:
+        return "SSLv2"
+    elif protocol_code == PROTOCOL_SSLv3:
+        return "SSLv3"
+    else:
+        return "<unknown>"
+
+
+# a replacement for the old socket.ssl function
+
+def sslwrap_simple(sock, keyfile=None, certfile=None):
+
+    """A replacement for the old socket.ssl function.  Designed
+    for compability with Python 2.5 and earlier.  Will disappear in
+    Python 3.0."""
+
+    if hasattr(sock, "_sock"):
+        sock = sock._sock
+
+    ssl_sock = _ssl.sslwrap(sock, 0, keyfile, certfile, CERT_NONE,
+                            PROTOCOL_SSLv23, None)
+    try:
+        sock.getpeername()
+    except socket_error:
+        # no, no connection yet
+        pass
+    else:
+        # yes, do the handshake
+        ssl_sock.do_handshake()
+
+    return ssl_sock
