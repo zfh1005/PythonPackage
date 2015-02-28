@@ -1,0 +1,1 @@
+This package is for Litepoint test. Run IQConsoleRun.exe, parser the test log file and report to the Java Program.
