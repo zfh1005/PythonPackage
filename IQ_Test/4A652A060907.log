@@ -1,0 +1,434 @@
+================================= Run 4 ===================================
+
+Summary
+1.GLOBAL_SETTINGS ____________________________________________________________
+    Test Time = 0.19 ms
+    ERROR_MESSAGE            :[Info] Function completed.
+      
+
+2.CONNECT_IQ_TESTER __________________________________________________________
+    Test Time = 2,348.98 ms
+    BLUETOOTH_VERSION        :1.2.1.b, September 24, 2010      
+    ERROR_MESSAGE            :[Info] Function completed.
+      
+    IQAPITC_VERSION          :1.2.50 Dec 22, 2010      
+    IQAPI_VERSION            :1.8.71.4 (Dec 28, 2010)      
+    IQMEASURE_VERSION        :1.8.71.4.5 (2010-12-20)      
+    IQTESTER_INFO            :IQmeasure: 1.8.71.4.5 (2010-12-20)
+iqapi:      1.8.71.4 (Dec 28, 2010)
+iqapitc:     1.2.50 Dec 22, 2010 
+iq_nxn:      1.1.7b (2010-12-1)
+IQV_mw:      3.2.5h Dec 14, 2009
+Tester 1 SN: IQF09992
+iq_nxn_signal:    1.1.22 (2010-10-26)
+iq_max_signal:    1.0.46 (2008-08-26)
+iq_zigbee_signal:    1.0.8 (2009-10-20)
+iq_nfc_signal:    0.2.20 (2010-09-22)
+bluetooth: 1.2.1.b, September 24, 2010
+iqv_analysis: 1.4.1.c Dec 14, 2010
+
+Tester 1 hardware version            : 1.5.7 Config2
+Tester 1 firmware version            : 1.6.64 070215
+Tester 1 calibration date            : 20-Dec-2012
+Tester 1 VSA version                 : 100507a2
+Tester 1 VSG version                 : 100507b2
+      
+    IQTESTER_SERIAL_NUM_01   :IQF09992      
+    IQTESTER_SERIAL_NUM_02   :      
+    IQTESTER_SERIAL_NUM_03   :      
+    IQTESTER_SERIAL_NUM_04   :      
+    IQV_ANALYSIS_VERSION     :1.4.1.c Dec 14, 2010      
+    IQV_MW_VERSION           :3.2.5h Dec 14, 2009      
+    IQ_MAX_SIGNAL_VERSION    :1.0.46 (2008-08-26)      
+    IQ_NXN_SIGNAL_VERSION    :1.1.22 (2010-10-26)      
+    IQ_NXN_VERSION           :1.1.7b (2010-12-1)      
+    IQ_ZIGBEE_SIGNAL_VERSION :1.0.8 (2009-10-20)      
+    TEST_MANAGER_VERSION     :1.6.4 (2011-01-04)
+      
+
+3.INSERT_DUT _________________________________________________________________
+    Test Time = 0.05 ms
+    DUT_VERSION              :Roku Austin WiFi DUT Control version : LP_1.1.0 (2012-10-25)
+      
+    ERROR_MESSAGE            :[Info] Function completed.      
+    VDUT_VERSION             :1.6.4 (2011-01-04)
+      
+
+4.INITIALIZE_DUT _____________________________________________________________
+    Test Time = 3,116.24 ms
+    DUT_DRIVER_INFO          :IQmeasure: 1.8.71.4.5 (2010-12-20)
+iqapi:      1.8.71.4 (Dec 28, 2010)
+iqapitc:     1.2.50 Dec 22, 2010 
+iq_nxn:      1.1.7b (2010-12-1)
+IQV_mw:      3.2.5h Dec 14, 2009
+Tester 1 SN: IQF09992
+iq_nxn_signal:    1.1.22 (2010-10-26)
+iq_max_signal:    1.0.46 (2008-08-26)
+iq_zigbee_signal:    1.0.8 (2009-10-20)
+iq_nfc_signal:    0.2.20 (2010-09-22)
+bluetooth: 1.2.1.b, September 24, 2010
+iqv_analysis: 1.4.1.c Dec 14, 2010
+
+Tester 1 hardware version            : 1.5.7 Config2
+Tester 1 firmware version            : 1.6.64 070215
+Tester 1 calibration date            : 20-Dec-2012
+Tester 1 VSA version                 : 100507a2
+Tester 1 VSG version                 : 100507b2
+      
+    DUT_NAME                 :Litepoint Loop-Back Test      
+    ERROR_MESSAGE            :[Info] Function completed.
+      
+
+5.LOAD_PATH_LOSS_TABLE _______________________________________________________
+    Test Time = 0.17 ms
+    ERROR_MESSAGE            :[Info] Function completed.
+      
+
+6.TX_VERIFY_EVM 2412 MCS7 HT20 _______________________________________________
+    Test Time = 1,870.67 ms
+    SPATIAL_STREAM           :              1       (, )
+    AMP_ERR_DB               :          -0.01    dB (, )
+    AMP_ERR_DB_1             :          -0.01    dB (, )
+    CABLE_LOSS_DB_1          :          29.10    dB (, )
+    DATA_RATE                :          65.00  Mbps (, )
+    EVM_AVG_1                :         -31.11    dB (, -28.00)
+    EVM_AVG_DB               :         -31.11    dB (, )
+    EVM_MAX_1                :         -30.25    dB (, )
+    EVM_MIN_1                :         -31.97    dB (, )
+    FREQ_ERROR_AVG           :           1.21   ppm (-25.00, 25.00)
+    FREQ_ERROR_MAX           :           1.21   ppm (, )
+    FREQ_ERROR_MIN           :           1.21   ppm (, )
+    PHASE_ERR                :           0.01 Degree (, )
+    PHASE_ERR_1              :           0.01 Degree (, )
+    PHASE_NOISE_RMS_ALL      :           0.39 Degree (, )
+    POWER_AVG_1              :          14.39   dBm (11.00, 18.00)
+    POWER_AVG_DBM            :          14.39   dBm (, )
+    POWER_MAX_1              :          14.40   dBm (, )
+    POWER_MIN_1              :          14.39   dBm (, )
+    ERROR_MESSAGE            :[Info] Function completed.
+      
+
+7.TX_VERIFY_MASK 2412 MCS7 HT20 ______________________________________________
+    Test Time = 1,787.52 ms
+    CABLE_LOSS_DB_1          :          29.10    dB (, )
+    FREQ_AT_MARGIN_LOWER_1   :         -10.94   MHz (-11.00, -9.00)
+    FREQ_AT_MARGIN_LOWER_2   :         -16.21   MHz (-20.00, -11.00)
+    FREQ_AT_MARGIN_LOWER_3   :         -29.38   MHz (-30.00, -20.00)
+    FREQ_AT_MARGIN_LOWER_4   :         -30.00   MHz (-40.00, -30.00)
+    FREQ_AT_MARGIN_UPPER_1   :           9.06   MHz (9, 11.00)
+    FREQ_AT_MARGIN_UPPER_2   :          18.09   MHz (11.00, 20.00)
+    FREQ_AT_MARGIN_UPPER_3   :          29.69   MHz (20.00, 30.00)
+    FREQ_AT_MARGIN_UPPER_4   :          32.23   MHz (30.00, 40.00)
+    MARGIN_DB_LOWER_1        :         -20.92    dB (, 30.00)
+    MARGIN_DB_LOWER_2        :         -14.65    dB (, 30.00)
+    MARGIN_DB_LOWER_3        :          -4.43    dB (, 30.00)
+    MARGIN_DB_LOWER_4        :          -5.65    dB (, 30.00)
+    MARGIN_DB_UPPER_1        :         -24.27    dB (, 30.00)
+    MARGIN_DB_UPPER_2        :         -18.93    dB (, 30.00)
+    MARGIN_DB_UPPER_3        :          -6.31    dB (, 30.00)
+    MARGIN_DB_UPPER_4        :          -6.06    dB (, 30.00)
+    OBW_FREQ_START_MHZ       :          -8.71   MHz (, )
+    OBW_FREQ_STOP_MHZ        :           8.71   MHz (, )
+    OBW_MHZ                  :          17.42   MHz (, 18.50)
+    POWER_AVERAGE_DBM        :          15.47   dBm (, )
+    VIOLATION_PERCENT        :           0.00     % (, )
+    ERROR_MESSAGE            :[Info] Function completed.
+      
+
+8.TX_VERIFY_EVM 2472 MCS7 HT20 _______________________________________________
+    Test Time = 1,988.51 ms
+    SPATIAL_STREAM           :              1       (, )
+    AMP_ERR_DB               :           0.01    dB (, )
+    AMP_ERR_DB_1             :           0.01    dB (, )
+    CABLE_LOSS_DB_2          :          40.70    dB (, )
+    DATA_RATE                :          65.00  Mbps (, )
+    EVM_AVG_1                :         -31.23    dB (, -28.00)
+    EVM_AVG_DB               :         -31.23    dB (, )
+    EVM_MAX_1                :         -30.74    dB (, )
+    EVM_MIN_1                :         -31.60    dB (, )
+    FREQ_ERROR_AVG           :           1.14   ppm (-25.00, 25.00)
+    FREQ_ERROR_MAX           :           1.15   ppm (, )
+    FREQ_ERROR_MIN           :           1.13   ppm (, )
+    PHASE_ERR                :          -0.04 Degree (, )
+    PHASE_ERR_1              :          -0.04 Degree (, )
+    PHASE_NOISE_RMS_ALL      :           0.23 Degree (, )
+    POWER_AVG_1              :          14.08   dBm (11.00, 18.00)
+    POWER_AVG_DBM            :          14.08   dBm (, )
+    POWER_MAX_1              :          14.13   dBm (, )
+    POWER_MIN_1              :          14.02   dBm (, )
+    ERROR_MESSAGE            :[Info] Function completed.
+      
+
+9.TX_VERIFY_MASK 2472 MCS7 HT20 ______________________________________________
+    Test Time = 1,790.35 ms
+    CABLE_LOSS_DB_2          :          40.70    dB (, )
+    FREQ_AT_MARGIN_LOWER_1   :         -10.94   MHz (-11.00, -9.00)
+    FREQ_AT_MARGIN_LOWER_2   :         -18.16   MHz (-20.00, -11.00)
+    FREQ_AT_MARGIN_LOWER_3   :         -29.41   MHz (-30.00, -20.00)
+    FREQ_AT_MARGIN_LOWER_4   :         -31.02   MHz (-40.00, -30.00)
+    FREQ_AT_MARGIN_UPPER_1   :           9.06   MHz (9, 11.00)
+    FREQ_AT_MARGIN_UPPER_2   :          18.75   MHz (11.00, 20.00)
+    FREQ_AT_MARGIN_UPPER_3   :          29.84   MHz (20.00, 30.00)
+    FREQ_AT_MARGIN_UPPER_4   :          33.32   MHz (30.00, 40.00)
+    MARGIN_DB_LOWER_1        :         -22.66    dB (, 30.00)
+    MARGIN_DB_LOWER_2        :         -16.72    dB (, 30.00)
+    MARGIN_DB_LOWER_3        :          -7.06    dB (, 30.00)
+    MARGIN_DB_LOWER_4        :          -6.21    dB (, 30.00)
+    MARGIN_DB_UPPER_1        :         -24.16    dB (, 30.00)
+    MARGIN_DB_UPPER_2        :         -19.08    dB (, 30.00)
+    MARGIN_DB_UPPER_3        :          -4.67    dB (, 30.00)
+    MARGIN_DB_UPPER_4        :          -3.63    dB (, 30.00)
+    OBW_FREQ_START_MHZ       :          -8.67   MHz (, )
+    OBW_FREQ_STOP_MHZ        :           8.75   MHz (, )
+    OBW_MHZ                  :          17.42   MHz (, 18.50)
+    POWER_AVERAGE_DBM        :          15.18   dBm (, )
+    VIOLATION_PERCENT        :           0.00     % (, )
+    ERROR_MESSAGE            :[Info] Function completed.
+      
+
+10.TX_VERIFY_EVM 5180 MCS7 HT20 ______________________________________________
+    Test Time = 1,990.90 ms
+    SPATIAL_STREAM           :              1       (, )
+    AMP_ERR_DB               :           0.04    dB (, )
+    AMP_ERR_DB_1             :           0.04    dB (, )
+    CABLE_LOSS_DB_1          :          41.30    dB (, )
+    DATA_RATE                :          65.00  Mbps (, )
+    EVM_AVG_1                :         -31.94    dB (, -28.00)
+    EVM_AVG_DB               :         -31.94    dB (, )
+    EVM_MAX_1                :         -30.77    dB (, )
+    EVM_MIN_1                :         -33.07    dB (, )
+    FREQ_ERROR_AVG           :           1.04   ppm (-20.00, 20.00)
+    FREQ_ERROR_MAX           :           1.04   ppm (, )
+    FREQ_ERROR_MIN           :           1.03   ppm (, )
+    PHASE_ERR                :           0.17 Degree (, )
+    PHASE_ERR_1              :           0.17 Degree (, )
+    PHASE_NOISE_RMS_ALL      :           0.42 Degree (, )
+    POWER_AVG_1              :          15.19   dBm (11.00, 18.00)
+    POWER_AVG_DBM            :          15.19   dBm (, )
+    POWER_MAX_1              :          15.20   dBm (, )
+    POWER_MIN_1              :          15.18   dBm (, )
+    ERROR_MESSAGE            :[Info] Function completed.
+      
+
+11.TX_VERIFY_MASK 5180 MCS7 HT20 _____________________________________________
+    Test Time = 1,781.31 ms
+    CABLE_LOSS_DB_1          :          41.30    dB (, )
+    FREQ_AT_MARGIN_LOWER_1   :          -9.18   MHz (-11.00, -9.00)
+    FREQ_AT_MARGIN_LOWER_2   :         -11.21   MHz (-20.00, -11.00)
+    FREQ_AT_MARGIN_LOWER_3   :         -29.96   MHz (-30.00, -20.00)
+    FREQ_AT_MARGIN_LOWER_4   :         -31.21   MHz (-40.00, -30.00)
+    FREQ_AT_MARGIN_UPPER_1   :           9.06   MHz (9, 11.00)
+    FREQ_AT_MARGIN_UPPER_2   :          11.25   MHz (11.00, 20.00)
+    FREQ_AT_MARGIN_UPPER_3   :          28.79   MHz (20.00, 30.00)
+    FREQ_AT_MARGIN_UPPER_4   :          31.88   MHz (30.00, 40.00)
+    MARGIN_DB_LOWER_1        :         -20.04    dB (, 30.00)
+    MARGIN_DB_LOWER_2        :         -15.18    dB (, 30.00)
+    MARGIN_DB_LOWER_3        :          -4.76    dB (, 30.00)
+    MARGIN_DB_LOWER_4        :          -3.75    dB (, 30.00)
+    MARGIN_DB_UPPER_1        :         -20.45    dB (, 30.00)
+    MARGIN_DB_UPPER_2        :         -17.22    dB (, 30.00)
+    MARGIN_DB_UPPER_3        :          -6.93    dB (, 30.00)
+    MARGIN_DB_UPPER_4        :          -4.82    dB (, 30.00)
+    OBW_FREQ_START_MHZ       :          -8.75   MHz (, )
+    OBW_FREQ_STOP_MHZ        :           8.75   MHz (, )
+    OBW_MHZ                  :          17.50   MHz (, )
+    POWER_AVERAGE_DBM        :          16.43   dBm (, )
+    VIOLATION_PERCENT        :           0.00     % (, )
+    ERROR_MESSAGE            :[Info] Function completed.
+      
+
+12.TX_VERIFY_EVM 5825 MCS7 HT20 ______________________________________________
+    Test Time = 1,968.48 ms
+    SPATIAL_STREAM           :              1       (, )
+    AMP_ERR_DB               :           0.05    dB (, )
+    AMP_ERR_DB_1             :           0.05    dB (, )
+    CABLE_LOSS_DB_2          :          47.40    dB (, )
+    DATA_RATE                :          65.00  Mbps (, )
+    EVM_AVG_1                :         -30.45    dB (, -28.00)
+    EVM_AVG_DB               :         -30.45    dB (, )
+    EVM_MAX_1                :         -29.50    dB (, )
+    EVM_MIN_1                :         -31.21    dB (, )
+    FREQ_ERROR_AVG           :           0.98   ppm (-20.00, 20.00)
+    FREQ_ERROR_MAX           :           0.99   ppm (, )
+    FREQ_ERROR_MIN           :           0.97   ppm (, )
+    PHASE_ERR                :          -0.31 Degree (, )
+    PHASE_ERR_1              :          -0.31 Degree (, )
+    PHASE_NOISE_RMS_ALL      :           0.62 Degree (, )
+    POWER_AVG_1              :          13.29   dBm (9, 16.00)
+    POWER_AVG_DBM            :          13.29   dBm (, )
+    POWER_MAX_1              :          13.32   dBm (, )
+    POWER_MIN_1              :          13.27   dBm (, )
+    ERROR_MESSAGE            :[Info] Function completed.
+      
+
+13.TX_VERIFY_MASK 5825 MCS7 HT20 _____________________________________________
+    Test Time = 1,777.19 ms
+    CABLE_LOSS_DB_2          :          47.40    dB (, )
+    FREQ_AT_MARGIN_LOWER_1   :         -10.98   MHz (-11.00, -9.00)
+    FREQ_AT_MARGIN_LOWER_2   :         -18.71   MHz (-20.00, -11.00)
+    FREQ_AT_MARGIN_LOWER_3   :         -29.38   MHz (-30.00, -20.00)
+    FREQ_AT_MARGIN_LOWER_4   :         -31.25   MHz (-40.00, -30.00)
+    FREQ_AT_MARGIN_UPPER_1   :          10.94   MHz (9, 11.00)
+    FREQ_AT_MARGIN_UPPER_2   :          15.00   MHz (11.00, 20.00)
+    FREQ_AT_MARGIN_UPPER_3   :          28.95   MHz (20.00, 30.00)
+    FREQ_AT_MARGIN_UPPER_4   :          34.57   MHz (30.00, 40.00)
+    MARGIN_DB_LOWER_1        :         -16.50    dB (, 30.00)
+    MARGIN_DB_LOWER_2        :          -9.14    dB (, 30.00)
+    MARGIN_DB_LOWER_3        :           0.49    dB (, 30.00)
+    MARGIN_DB_LOWER_4        :           0.54    dB (, 30.00)
+    MARGIN_DB_UPPER_1        :         -18.84    dB (, 30.00)
+    MARGIN_DB_UPPER_2        :          -9.78    dB (, 30.00)
+    MARGIN_DB_UPPER_3        :          -2.31    dB (, 30.00)
+    MARGIN_DB_UPPER_4        :          -0.41    dB (, 30.00)
+    OBW_FREQ_START_MHZ       :          -8.75   MHz (, )
+    OBW_FREQ_STOP_MHZ        :           8.75   MHz (, )
+    OBW_MHZ                  :          17.50   MHz (, )
+    POWER_AVERAGE_DBM        :          16.56   dBm (, )
+    VIOLATION_PERCENT        :           0.15     % (, )
+    ERROR_MESSAGE            :[Info] Function completed.
+      
+
+14.RX_VERIFY_PER 2412 MCS7 HT20 ______________________________________________
+    Test Time = 2,749.79 ms
+    GOOD_PACKETS             :           1000       (, )
+    TOTAL_PACKETS            :           1000       (, )
+    CABLE_LOSS_DB_1          :          29.10    dB (, )
+    PER                      :           0.00     % (, 10.00)
+    RSSI                     :           0.00       (, )
+    RX_POWER_LEVEL           :         -58.00   dBm (, )
+    ERROR_MESSAGE            :[Info] Function completed.
+      
+
+15.RX_VERIFY_PER 2412 MCS0 HT20 ______________________________________________
+    Test Time = 2,854.56 ms
+    GOOD_PACKETS             :            200       (, )
+    TOTAL_PACKETS            :            200       (, )
+    CABLE_LOSS_DB_1          :          29.10    dB (, )
+    PER                      :           0.00     % (, 10.00)
+    RSSI                     :           0.00       (, )
+    RX_POWER_LEVEL           :         -70.00   dBm (, )
+    ERROR_MESSAGE            :[Info] Function completed.
+      
+
+16.RX_VERIFY_PER 2472 MCS7 HT20 ______________________________________________
+    Test Time = 2,604.56 ms
+    GOOD_PACKETS             :           1000       (, )
+    TOTAL_PACKETS            :           1000       (, )
+    CABLE_LOSS_DB_2          :          40.70    dB (, )
+    PER                      :           0.00     % (, 10.00)
+    RSSI                     :           0.00       (, )
+    RX_POWER_LEVEL           :         -60.00   dBm (, )
+    ERROR_MESSAGE            :[Info] Function completed.
+      
+
+17.RX_VERIFY_PER 2472 MCS0 HT20 ______________________________________________
+    Test Time = 2,854.32 ms
+    GOOD_PACKETS             :            200       (, )
+    TOTAL_PACKETS            :            200       (, )
+    CABLE_LOSS_DB_2          :          40.70    dB (, )
+    PER                      :           0.00     % (, 10.00)
+    RSSI                     :           0.00       (, )
+    RX_POWER_LEVEL           :         -80.00   dBm (, )
+    ERROR_MESSAGE            :[Info] Function completed.
+      
+
+18.RX_VERIFY_PER 5180 MCS7 HT20 ______________________________________________
+    Test Time = 2,651.29 ms
+    GOOD_PACKETS             :           1000       (, )
+    TOTAL_PACKETS            :           1000       (, )
+    CABLE_LOSS_DB_1          :          41.30    dB (, )
+    PER                      :           0.00     % (, 10.00)
+    RSSI                     :           0.00       (, )
+    RX_POWER_LEVEL           :         -65.00   dBm (, )
+    ERROR_MESSAGE            :[Info] Function completed.
+      
+
+19.RX_VERIFY_PER 5180 MCS0 HT20 ______________________________________________
+    Test Time = 2,838.67 ms
+    GOOD_PACKETS             :            200       (, )
+    TOTAL_PACKETS            :            200       (, )
+    CABLE_LOSS_DB_1          :          41.30    dB (, )
+    PER                      :           0.00     % (, 10.00)
+    RSSI                     :           0.00       (, )
+    RX_POWER_LEVEL           :         -85.00   dBm (, )
+    ERROR_MESSAGE            :[Info] Function completed.
+      
+
+20.RX_VERIFY_PER 5825 MCS0 HT20 ______________________________________________
+    Test Time = 2,776.20 ms
+    GOOD_PACKETS             :            200       (, )
+    TOTAL_PACKETS            :            200       (, )
+    CABLE_LOSS_DB_2          :          47.40    dB (, )
+    PER                      :           0.00     % (, 10.00)
+    RSSI                     :           0.00       (, )
+    RX_POWER_LEVEL           :         -85.00   dBm (, )
+    ERROR_MESSAGE            :[Info] Function completed.
+      
+
+21.RX_VERIFY_PER 5825 MCS7 HT20 ______________________________________________
+    Test Time = 2,572.95 ms
+    GOOD_PACKETS             :           1000       (, )
+    TOTAL_PACKETS            :           1000       (, )
+    CABLE_LOSS_DB_2          :          47.40    dB (, )
+    PER                      :           0.00     % (, 10.00)
+    RSSI                     :           0.00       (, )
+    RX_POWER_LEVEL           :         -65.00   dBm (, )
+    ERROR_MESSAGE            :[Info] Function completed.
+      
+
+22.DISCONNECT_IQ_TESTER ______________________________________________________
+    Test Time = 1.04 ms
+    ERROR_MESSAGE            :[Info] Function completed.
+      
+
+23.REMOVE_DUT ________________________________________________________________
+    Test Time = 0.11 ms
+    ERROR_MESSAGE            :[Info] Function completed.
+      
+
+24.RUN_EXTERNAL_PROGRAM ______________________________________________________
+    Test Time = 133.62 ms
+    ERROR_MESSAGE            :[Info] Function completed.
+      
+
+--------------------------------------------------------------------
+
+                         *************
+                         *  P A S S  *
+                         *************
+1.GLOBAL_SETTINGS                                :        0.19 ms             
+2.CONNECT_IQ_TESTER                              :    2,348.98 ms             
+3.INSERT_DUT                                     :        0.05 ms             
+4.INITIALIZE_DUT                                 :    3,116.24 ms             
+5.LOAD_PATH_LOSS_TABLE                           :        0.17 ms             
+6.TX_VERIFY_EVM 2412 MCS7 HT20                   :    1,870.67 ms             
+7.TX_VERIFY_MASK 2412 MCS7 HT20                  :    1,787.52 ms             
+8.TX_VERIFY_EVM 2472 MCS7 HT20                   :    1,988.51 ms             
+9.TX_VERIFY_MASK 2472 MCS7 HT20                  :    1,790.35 ms             
+10.TX_VERIFY_EVM 5180 MCS7 HT20                  :    1,990.90 ms             
+11.TX_VERIFY_MASK 5180 MCS7 HT20                 :    1,781.31 ms             
+12.TX_VERIFY_EVM 5825 MCS7 HT20                  :    1,968.48 ms             
+13.TX_VERIFY_MASK 5825 MCS7 HT20                 :    1,777.19 ms             
+14.RX_VERIFY_PER 2412 MCS7 HT20                  :    2,749.79 ms             
+15.RX_VERIFY_PER 2412 MCS0 HT20                  :    2,854.56 ms             
+16.RX_VERIFY_PER 2472 MCS7 HT20                  :    2,604.56 ms             
+17.RX_VERIFY_PER 2472 MCS0 HT20                  :    2,854.32 ms             
+18.RX_VERIFY_PER 5180 MCS7 HT20                  :    2,651.29 ms             
+19.RX_VERIFY_PER 5180 MCS0 HT20                  :    2,838.67 ms             
+20.RX_VERIFY_PER 5825 MCS0 HT20                  :    2,776.20 ms             
+21.RX_VERIFY_PER 5825 MCS7 HT20                  :    2,572.95 ms             
+22.DISCONNECT_IQ_TESTER                          :        1.04 ms             
+23.REMOVE_DUT                                    :        0.11 ms             
+24.RUN_EXTERNAL_PROGRAM                          :      133.62 ms             
+
+Total Run(s)             : 4
+Passed Run(s)            : 4
+Failed Run(s) on Limits  : 0
+Failed Run(s) on Errors  : 0
+ 
+In This Run:
+    Fail(s) on Limits    : 0
+    Fail(s) on Errors    : 0
+    Flow Run Time        : 0.14 sec
+    Test Function Time   : 42.46 sec
+--------------------------------------------------------------------
