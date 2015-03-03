@@ -179,6 +179,20 @@ def parseIQTestData(sourcePath):
         f.close()       
         #print(ErrorInfo)
         
+		comString = r'P A S S'
+        if testResult == 'PASSED':
+            truePass = False
+            for line in lines:
+                m = re.search(comString, line)
+                if m:
+                    print(line.strip())
+                    truePass =True
+                    break
+            if truePass == False:
+                testResult = 'FAILED'
+                ErrorInfo = ['777.IQ test error _EX01', '777', '-777', '777']
+        #print(value)
+		
         if '============================= Run' in lines[0]:
             logNormal = True
         else:
