@@ -178,8 +178,13 @@ def parseIQTestData(sourcePath):
                     ErrorInfo.append(tempUpperSpec)
         f.close()       
         #print(ErrorInfo)
-
-               
+        
+        if '============================= Run' in lines[0]:
+            logNormal = True
+        else:
+            testResult = 'FAILED'
+            ErrorInfo = ['888.IQ test error _EX01', '888', '-888', '888']
+                      
         #insert test result into resultDict
         for x in range(0, len(value), 4):
             tempKey = '%03d%s'%((x / 4 + 1), '.' + value[x].split('.')[-1])
