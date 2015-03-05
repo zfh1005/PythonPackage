@@ -55,3 +55,24 @@ def getErrorCode(e):
     elif '_EX01' in ErrorList[-1]:
         errorCode += 'EX01'     
     return  errorCode
+	
+def getErrorCodeDescribe(e):
+    assert len(e) != 0
+    return ErrorCodeDict[e]
+
+def getErrorCodeAndDescribe(e):
+    assert len(e) != 0
+    parseErrorCodeDefine()
+    re = getErrorCode(e)    
+    return re, getErrorCodeDescribe(re)
+
+def getErrorInfo(e):
+    assert len(e) != 0
+     #e = ['8.TX_VERIFY_EVM 2472 MCS7 HT20 _FREQ', '-25.00', '-1.66', ' 25.00']
+    parseErrorCodeDefine()
+    re = getErrorCode(e)    
+    return [re, getErrorCodeDescribe(re), e[2]]
+    
+
+if __name__ == '__main__':
+    print(getErrorInfo(ERROR_LIST))
