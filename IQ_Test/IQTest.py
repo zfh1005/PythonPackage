@@ -4,6 +4,7 @@ Run IQ test file and parser the test data
 '''
 import os
 import sys
+import time
 import win32api
 import win32gui
 import win32con
@@ -19,7 +20,12 @@ IQ_TEST_REPORT_FILE_NAME = r'd:\result.xml'
 
 
 def IQTestFlow():
-
+    startTime = time.time()
+    print('Start test time: ' + time.strftime('%Y/%m/%d %H:%M:%S'))
+    if not os.path.exists(IQ_TEST_FINISHED_FILE_NAME):
+        createFile(IQ_TEST_FINISHED_FILE_NAME)
+    if os.path.exists(IQ_TEST_RESULT_FILE_NAME):
+        os.remove(IQ_TEST_RESULT_FILE_NAME)
     #Run IQ file and wait result
     #check 'IQRunConsole.exe' running or not?
     hwnd = win32gui.FindWindow('ConsoleWindowClass', IQ_BAT_TITLE_NAME)
@@ -54,28 +60,52 @@ def IQTestFlow():
         else:
             time.sleep(0.1)
             #print('Wait test finished!')
+        if iTime > 1100:            
+            break
         
     #parser test result
     #resultFileName = getCurrentPath() + IQ_TEST_RESULT_FILE_NAME
     testDataDict = {}
     errorInfos = []
-    testDataDict, ErrorInfo, testResult, logNormal = parseIQTestData(IQ_TEST_RESULT_FILE_NAME)
+    if iTime > 1100:
+        testDataDict = {'555.Test time': ['0', '110', '110']}
+        errorInfos = getErrorInfo(['555.Test time too long _TT00', '555', '-555', '555'])
+        print('Test time too long!')
+        win32api.SendMessage(hwnd, win32con.WM_CLOSE)
         
-    if logNormal == False:
-        print('Test log error!')
-    win32api.SendMessage(hwnd, win32con.WM_CLOSE)
-            
-    #report the result
-        
-    if len(ErrorInfo) != 0:
-        errorInfos = getErrorInfo(ErrorInfo)
     else:
-        if testResult != 'PASSED':
-            errorInfos = getErrorInfo(['666.Parse Failed value error _EX01', '666', '-666', '666']) 
-
-			
+        testDataDict, ErrorInfo, testResult, logNormal = parseIQTestData(IQ_TEST_RESULT_FILE_NAME)
+        
+        if logNormal == False:
+            print('Test log error!')
+            win32api.SendMessage(hwnd, win32con.WM_CLOSE)
+            
+        #report the result
+        
+        if len(ErrorInfo) != 0:
+            errorInfos = getErrorInfo(ErrorInfo)
+        else:
+            if testResult != 'PASSED':
+                errorInfos = getErrorInfo(['666.Parse Failed value error _EX01', '666', '-666', '666'])  
+      
     xmlReport = generateTestReport(testDataDict, errorInfos)
     print(xmlReport)
+
+    writeXmlFile(xmlReport)
+    print('Finished test time: ' + time.strftime('%Y/%m/%d %H:%M:%S'))
+    print('Test time: %0.2f'%(time.time() - startTime))
+
+def writeXmlFile(e):
+    f = open(IQ_TEST_REPORT_FILE_NAME, 'a')
+    f.write(str(e))
+    f.flush()
+    f.close()
+    
+def createFile(e):
+    f = open(e, 'a')
+    f.write(str('temp'))
+    f.flush()
+    f.close() 
 
 
 def getCurrentPath():
@@ -84,3 +114,6 @@ def getCurrentPath():
         return filePath
     elif os.path.isfile(filePath):
         return os.path.dirname(filePath)
+
+if __name__ == '__main__':
+    IQTestFlow()
