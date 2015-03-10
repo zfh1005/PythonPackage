@@ -117,3 +117,55 @@ class FTP:
         self.debugging = level
     debug = set_debuglevel
 	
+	def set_pasv(self, val):
+        '''Use passive or active mode for data transfers.
+        With a false argument, use the normal PORT mode,
+        With a true argument, use the PASV command.'''
+        self.passiveserver = val
+
+    # Internal: "sanitize" a string for printing
+    def sanitize(self, s):
+        if s[:5] == 'pass ' or s[:5] == 'PASS ':
+            i = len(s)
+            while i > 5 and s[i-1] in '\r\n':
+                i = i-1
+            s = s[:5] + '*'*(i-5) + s[i:]
+        return repr(s)
+
+    # Internal: send one line to the server, appending CRLF
+    def putline(self, line):
+        line = line + CRLF
+        if self.debugging > 1: print '*put*', self.sanitize(line)
+        self.sock.sendall(line)
+
+    # Internal: send one command to the server (through putline())
+    def putcmd(self, line):
+        if self.debugging: print '*cmd*', self.sanitize(line)
+        self.putline(line)
+
+    # Internal: return one line from the server, stripping CRLF.
+    # Raise EOFError if the connection is closed
+    def getline(self):
+        line = self.file.readline()
+        if self.debugging > 1:
+            print '*get*', self.sanitize(line)
+        if not line: raise EOFError
+        if line[-2:] == CRLF: line = line[:-2]
+        elif line[-1:] in CRLF: line = line[:-1]
+        return line
+
+    # Internal: get a response from the server, which may possibly
+    # consist of multiple lines.  Return a single string with no
+    # trailing CRLF.  If the response consists of multiple lines,
+    # these are separated by '\n' characters in the string
+    def getmultiline(self):
+        line = self.getline()
+        if line[3:4] == '-':
+            code = line[:3]
+            while 1:
+                nextline = self.getline()
+                line = line + ('\n' + nextline)
+                if nextline[:3] == code and \
+                        nextline[3:4] != '-':
+                    break
+        return line
