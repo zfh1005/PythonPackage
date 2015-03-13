@@ -940,6 +940,63 @@ class Netrc:
         """Return a sequence of lines which define a named macro."""
         return self.__macros[macro]
 
+def test():
+    '''Test program.
+    Usage: ftp [-d] [-r[file]] host [-l[dir]] [-d[dir]] [-p] [file] ...
+
+    -d dir
+    -l list
+    -p password
+    '''
+
+    if len(sys.argv) < 2:
+        print test.__doc__
+        sys.exit(0)
+
+    debugging = 0
+    rcfile = None
+    while sys.argv[1] == '-d':
+        debugging = debugging+1
+        del sys.argv[1]
+    if sys.argv[1][:2] == '-r':
+        # get name of alternate ~/.netrc file:
+        rcfile = sys.argv[1][2:]
+        del sys.argv[1]
+    host = sys.argv[1]
+    ftp = FTP(host)
+    ftp.set_debuglevel(debugging)
+    userid = passwd = acct = ''
+    try:
+        netrc = Netrc(rcfile)
+    except IOError:
+        if rcfile is not None:
+            sys.stderr.write("Could not open account file"
+                             " -- using anonymous login.")
+    else:
+        try:
+            userid, passwd, acct = netrc.get_account(host)
+        except KeyError:
+            # no account for host
+            sys.stderr.write(
+                    "No account -- using anonymous login.")
+    ftp.login(userid, passwd, acct)
+    for file in sys.argv[2:]:
+        if file[:2] == '-l':
+            ftp.dir(file[2:])
+        elif file[:2] == '-d':
+            cmd = 'CWD'
+            if file[2:]: cmd = cmd + ' ' + file[2:]
+            resp = ftp.sendcmd(cmd)
+        elif file == '-p':
+            ftp.set_pasv(not ftp.passiveserver)
+        else:
+            ftp.retrbinary('RETR ' + file, \
+                           sys.stdout.write, 1024)
+    ftp.quit()
+
+
+if __name__ == '__main__':
+    test()
 
 			
 			
