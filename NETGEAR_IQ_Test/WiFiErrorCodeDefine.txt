@@ -1,0 +1,13 @@
+EV04:2G EVM test failed
+EV14:5G EVM test failed
+PW04:2G POWER test failed
+PW14:5G POWER test failed
+FQ04:2G FREQ test failed
+FQ14:5G FREQ test failed
+PR04:2G PER test failed
+PR14:5G PER test failed
+MS04:2G MASK test failed
+MS14:5G MASK test failed
+SY00:IQ test API return error
+TT00:Test time too long failed
+EX01:Parse test failed value failed
