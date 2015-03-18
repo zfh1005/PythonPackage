@@ -1,0 +1,38 @@
+
+Testing start ...
+__________________________________________________________________
+
+TX_VERIFY_EVM 2412 MCS7 HT20 #16.5 $-28 @1
+	[#] EVM_AVG_1                :	-30.76 dB
+	[#] FREQ_ERROR_AVG           :	-10.52 ppm
+	[#] POWER_AVG_1              :	16.61 dBm
+Test time: 7.297
+
+TX_VERIFY_EVM 2457 MCS7 HT20 #17 $-28 @2
+	[#] EVM_AVG_1                :	-28.93 dB
+	[#] FREQ_ERROR_AVG           :	-10.58 ppm
+	[#] POWER_AVG_1              :	18.26 dBm
+Test time: 6.61
+
+RX_VERIFY_PER 2422 MCS7 HT40 #-65 &1000 @1
+	[#] PER           :		0 %
+	[#] RX_POWER_LEVEL:		-65 dBm
+Test time: 5.875
+
+RX_VERIFY_PER 2457 MCS7 HT40 #-65 &1000 @2
+	[#] PER           :		0 %
+	[#] RX_POWER_LEVEL:		-65 dBm
+Test time: 5.64
+                     * * * * * * * * * * * *                     
+                     * * * P A S S E D * * *                    
+                     * * * * * * * * * * * *                     
+__________________________________________________________________
+Final Result: P A S S E D                                         
+
+Testing Result Summary:
+__________________________________________________________________
+[Step 007] TX_VERIFY_EVM 2412 MCS7 HT20 #16.5 $-28 @1    	<-- Passed
+[Step 008] TX_VERIFY_EVM 2457 MCS7 HT20 #17 $-28 @2    	<-- Passed
+[Step 009] RX_VERIFY_PER 2422 MCS7 HT40 #-65 &1000 @1    	<-- Passed
+[Step 010] RX_VERIFY_PER 2457 MCS7 HT40 #-65 &1000 @2    	<-- Passed
+Total Test time: 53.359

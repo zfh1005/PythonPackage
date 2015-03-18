@@ -1,0 +1,19 @@
+
+Testing start ...
+__________________________________________________________________
+
+TX_VERIFY_EVM 2412 MCS7 HT20 #16.5 $-28 @1
+	[#] EVM_AVG_1                :	-32.9 dB
+	[#] FREQ_ERROR_AVG           :	-11.89 ppm
+	[#] POWER_AVG_1              :	14.94 dBm	<-- Failed
+Test time: 8.75
+                     * * * * * * * * * * * *                     
+                     * * * F A I L E D * * *                     
+                     * * * * * * * * * * * *                     
+__________________________________________________________________
+Final Result: F A I L E D                                         
+
+Testing Result Summary:
+__________________________________________________________________
+[Step 007] TX_VERIFY_EVM 2412 MCS7 HT20 #16.5 $-28 @1    	<-- Failed
+Total Test time: 36.375
